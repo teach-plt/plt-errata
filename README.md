@@ -16,7 +16,7 @@ p. 10 (and also later): it is stated that Python is an untyped language. By this
 
 ### Chapter 2, Grammars
 
-p. 25: last line: `show (interpet e)` should be `show (eval e)`.
+p. 25: last line: `show (interpret e)` should be `show (eval e)`.
 
 p. 27: too many classes in the Java example have the name `EAdd`. Should be `EAdd`, `ESub`, `EMul`, `EDiv`.
 
@@ -62,6 +62,11 @@ is that the state monad formulation `Γ ⊢ s ⇒ Γ'` is replaced by a
 context monad formulation `Γ ⊢ ss valid` at the cost of modularity:
 we can only handle statement sequences.
 
+#### 4.8 Declarations and block structures
+
+This section should discuss the scopes for `if` and `while` (see
+errata for Section 5.3).
+
 #### 4.10 Annotating type checkers
 
 p. 69: the pseudo-code for `infer(Γ,a+b)` is wrong in that it removes the annotations from the subexpressions of the addition expression.  The correct return statement would be
@@ -90,7 +95,8 @@ checkStm env s = case s of
     updateVar env x typ
   SWhile exp stm -> do
     checkExp env Type_bool exp
-    checkStm env stm
+    checkStm (newBlock env) stm
+    return env
 ```
 
 p. 74, lines 1-3: Use `s` instead of `x` as variable name for statement.
@@ -122,27 +128,28 @@ p. 84: The specified interpreter gives the wrong result for
 It gives `1`, while the correct result is `0`.
 The problem is that the body of the `while` will overwrite the value of the shadowed `y`.
 To fix this, the body of a `while` has to be treated as if in its own block.
-`if` has to be fixed in a similar way.
 
-However, the treatment of blocks in `while` is also wrong.  The
-declarations of a block need to persist until the while loop has
-terminated.  Example:
+See http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf
+
+  An iteration statement is a block whose scope is a strict subset of
+  the scope of its enclosing block.  The loop body is also a block
+  whose scope is a strict subset of the scope of the iteration
+  statement.
+  (Section 6.8.5, sentence 5, page number 135, absolute page 147)
+
+Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ″.γ₀` in the
+first rule for `while`.
+
+`if` has to be fixed in a similar way, see section 6.8.4, sentence 3.
 ```c
-    int i = 0;
-    int result = 1;
-    while (i < 9) {
-      int prev;
-      int tmp;
-      if (i == 0) tmp = 1; else tmp = prev;
-      prev = result;
-      result = tmp + result;
-      i++;
-    }
+  int y = 0;
+  if (1) int y = 1; else int y = 2;
+  return y;
 ```
-Interpretation of blocks simply discards the values of the local
-bindings after the block.  This does not work if the block is in a
-`while` loop.
+This should return `0`, but the current interpreter will return `1`.
 
+Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ″.γ₀` in the
+first rule for `if`.  Analogously for the second rule.
 
 #### 5.7 Interpreting Java  bytecode
 
