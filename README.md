@@ -128,13 +128,12 @@ It gives `1`, while the correct result is `0`.
 The problem is that the body of the `while` will overwrite the value of the shadowed `y`.
 To fix this, the body of a `while` has to be treated as if in its own block.
 
-See http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf
+See http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf:
 
-  An iteration statement is a block whose scope is a strict subset of
-  the scope of its enclosing block.  The loop body is also a block
-  whose scope is a strict subset of the scope of the iteration
-  statement.
-  (Section 6.8.5, sentence 5, page number 135, absolute page 147)
+> An iteration statement is a block whose scope is a strict subset of
+> the scope of its enclosing block.  The loop body is also a block
+> whose scope is a strict subset of the scope of the iteration
+> statement. (Section 6.8.5, sentence 5, page number 135, absolute page 147)
 
 Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ″.γ₀` in the
 first rule for `while`.
