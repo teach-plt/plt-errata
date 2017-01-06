@@ -48,9 +48,11 @@ It is rather confusing than helpful.
 #### 4.7 The validity of statements and function definitions
 
 The judgement for checking statements should be formulated as
+
 ```
-  Γ ⊢ s ⇒ Γ'
+Γ ⊢ s ⇒ Γ'
 ```
+
 Declarations such as `int x;` extend the typing context.
 This would allow to define checking of a sequence of statements
 in the natural way.  Actually the Haskell implementation in 4.11
@@ -69,8 +71,9 @@ errata for Section 5.3).
 #### 4.10 Annotating type checkers
 
 p. 69: the pseudo-code for `infer(Γ,a+b)` is wrong in that it removes the annotations from the subexpressions of the addition expression.  The correct return statement would be
-```
-  return [['a : t] + ['b : t] : t]
+
+```haskell
+return [['a : t] + ['b : t] : t]
 ```
 
 p. 70: the pseudo-code for `infer(Γ,a+b)` has the same problem as on p. 69
@@ -79,11 +82,14 @@ p. 70: the pseudo-code for `infer(Γ,a+b)` has the same problem as on p. 69
 
 p. 73: in `checkExp` code, `if (typ2 = typ)` should be `if typ2 == typ`.
 It could also be written as
+
 ```haskell
-  unless (typ2 == typ) $ fail $
-    "type of " ++ ...
+unless (typ2 == typ) $ fail $
+  "type of " ++ ...
 ```
+
 In `checkStm`, there are several errors.  The correct code is:
+
 ```haskell
 checkStm :: Env -> Stm -> Err Env
 checkStm env s = case s of
@@ -109,21 +115,25 @@ p. 82: Rule `γ ⊢ x ⇓ v`: The `v` is type-set in the wrong font.
 It is not clear how the statement interpreter `γ ⊢ s ⇓ γ'` would deal
 with `return` statements which are not at the end of the function (or
 `break` statements in while loops).  I suggest to change it to
+
 ```
-  γ ⊢ s ⇓ ⟨r,γ'⟩
+γ ⊢ s ⇓ ⟨r,γ'⟩
 ```
+
 where `r ::= continue | return v` is the result of the statement:
 usually `continue`, but `return v` for a return statement.  The
 execution of sequencing of statements will discard the rest of the
 statements once the result is `return v`.
 
 p. 84: The specified interpreter gives the wrong result for
+
 ```c
-  int x = 0;
-  int y = 0;
-  while (x++ < 1) int y = 1;
-  return y;
+int x = 0;
+int y = 0;
+while (x++ < 1) int y = 1;
+return y;
 ```
+
 It gives `1`, while the correct result is `0`.
 The problem is that the body of the `while` will overwrite the value of the shadowed `y`.
 To fix this, the body of a `while` has to be treated as if in its own block.
@@ -139,11 +149,13 @@ Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ�
 first rule for `while`.
 
 `if` has to be fixed in a similar way, see section 6.8.4, sentence 3.
+
 ```c
-  int y = 0;
-  if (1) int y = 1; else int y = 2;
-  return y;
+int y = 0;
+if (1) int y = 1; else int y = 2;
+return y;
 ```
+
 This should return `0`, but the current interpreter will return `1`.
 
 Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ″.γ₀` in the
@@ -171,9 +183,10 @@ be applied to the typing context.
 ### Chapter 8, The Language Design Space
 
 p. 170: the `lin` rules for `TAll` and `TAny` generate a bogus condition. The proper rules are:
+
 ```
-    TAll kind = parenth ("\\p -> and [p x | x <-" ++ kind ++ "]") ;
-    TAny kind = parenth ("\\p -> or  [p x | x <-" ++ kind ++ "]") ;
+TAll kind = parenth ("\\p -> and [p x | x <-" ++ kind ++ "]") ;
+TAny kind = parenth ("\\p -> or  [p x | x <-" ++ kind ++ "]") ;
 ```
 
 ### Appendix A
