@@ -165,6 +165,10 @@ purpose.  Change would affect the following code.
 
 ### Chapter 7, Functional programming languages
 
+#### 7.3 Anonymous functions
+
+p. 128: C++ has had lambda functions since C++11.  This is also true for many other mainstream imperative languages nowadays, such as Java and C# -- so the comment about imperative languages on the previous page is a little misleading.
+
 #### 7.9 Polymorphic type checking with unification
 
 p. 142: in `infer(f,a)`: before `infer(a)`, substitution `γ₁` has to
