@@ -154,7 +154,7 @@ first rule for `if`.  Analogously for the second rule.
 
 p. 92: in the last rule for `ifeq L`, the code pointer should become `P+1` when `v != 0`
 
-### Chapter 6, Code generation
+### Chapter 6, Code Generation
 
 p. 108:  there is a `&lt;` in the class file template which should
 just be `<`.
@@ -162,14 +162,14 @@ just be `<`.
 p. 112: "just a dummy `Object`".  Now, Java has class `Void` for that
 purpose.  Change would affect the following code.
 
-### Chapter 7, Functional programming languages
+### Chapter 7, Functional Programming Languages
 
 #### 7.9 Polymorphic type checking with unification
 
 p. 142: in `infer(f,a)`: before `infer(a)`, substitution `γ₁` has to
 be applied to the typing context.
 
-### Chapter 8, The language design space
+### Chapter 8, The Language Design Space
 
 p. 170: the `lin` rules for `TAll` and `TAny` generate a bogus condition. The proper rules are:
 ```
