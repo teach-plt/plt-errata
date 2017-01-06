@@ -1,6 +1,5 @@
 # plt-errata
-Collection of errata for book Aarne Ranta, Implementing Programming Languages
-http://www1.digitalgrammars.com/ipl-book/
+Collection of errata for the book _[Implementing Programming Languages](http://www1.digitalgrammars.com/ipl-book)_ by Aarne Ranta.
 
 To add a new erratum, create an issue or pull request.
 Please use github markdown syntax and adhere to the style of this page.
@@ -8,7 +7,7 @@ I will then add the erratum below.
 
 ## Known errata
 
-This includes the errata listed on http://www1.digitalgrammars.com/ipl-book/
+This includes the errata listed on the book website.
 
 ### Chapter 1, Compilation Phases
 
