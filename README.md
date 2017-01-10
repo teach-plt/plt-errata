@@ -173,6 +173,8 @@ just be `<`.
 p. 112: "just a dummy `Object`".  Now, Java has class `Void` for that
 purpose.  Change would affect the following code.
 
+p. 105: The generated code for the while loop in the middle column contains `ifeq goto END`. It should be `ifeq END` without the goto.
+
 ### Chapter 7, Functional Programming Languages
 
 #### 7.3 Anonymous functions
