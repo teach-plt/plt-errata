@@ -198,3 +198,7 @@ p. 157: BNFC was not ported to Java, C, C++, etc.; rather, the mentioned languag
 ### Appendix A
 
 p. 175: The arcs in this diagram are not really traceable.
+
+### Appendix A
+
+p. 193: dcmpl explanation should be "compare if >*"
