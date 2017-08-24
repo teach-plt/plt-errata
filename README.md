@@ -202,3 +202,11 @@ TAny kind = parenth ("\\p -> or  [p x | x <-" ++ kind ++ "]") ;
 p. 175: The arcs in this diagram are not really traceable.
 
 p. 193: dcmpl explanation should be "compare if >*"
+
+p. 194: change the description of "dcmp, dcmpl" to
+
+  * dcmpg, dcmpl: takes and compares the two topmost doubles on the stack.
+    The value left on the stack is 1 if the first is greater than the second,
+    0 if they are equal, and -1 if the first is smaller than the second.
+    The operations only differ if one of the doubles is NaN (not-a-number).
+    Then dcmpg leaves 1, and dcmpl -1.
