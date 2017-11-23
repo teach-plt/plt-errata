@@ -201,6 +201,8 @@ TAny kind = parenth ("\\p -> or  [p x | x <-" ++ kind ++ "]") ;
 
 p. 175: The arcs in this diagram are not really traceable.
 
+### Appendix B
+
 p. 193: dcmpl explanation should be "compare if >*"
 
 p. 194: change the description of "dcmp, dcmpl" to
