@@ -181,6 +181,14 @@ p. 105: The generated code for the while loop in the middle column contains `ife
 
 p. 128: C++ has had lambda functions since C++11.  This is also true for many other mainstream imperative languages nowadays, such as Java and C# -- so the comment about imperative languages on the previous page is a little misleading.
 
+#### 7.5 Call by value vs. call by name
+
+p. 132: In other places, the notation "λx.e" is used for anonymous functions, but in the call-by-name application rule the notation "λx → e" is used instead.
+
+#### 7.8 Polymorphism
+
+p. 139 (and other places, e.g. Sec. 7.9): "->" is typeset incorrectly, e.g. in "since `a = d -> e`" (compare with arrow below).
+
 #### 7.9 Polymorphic type checking with unification
 
 p. 142: in `infer(f,a)`: before `infer(a)`, substitution `γ₁` has to
