@@ -174,6 +174,8 @@ p. 92: in the last rule for `ifeq L`, the code pointer should become `P+1` when 
 p. 108:  there is a `&lt;` in the class file template which should
 just be `<`.
 
+p. 112:  in code snippet of `CodeGenerator` class, `compile(Program p)` method requires missing method body, or abstract method declaration.
+
 p. 112: "just a dummy `Object`".  Now, Java has class `Void` for that
 purpose.  Change would affect the following code.
 
