@@ -70,6 +70,10 @@ we can only handle statement sequences.
 This section should discuss the scopes for `if` and `while` (see
 errata for Section 5.3).
 
+#### 4.9 Implementing a type checker
+
+p. 68: missing right closing paranthesis in the code snippet for a single function type checking.
+
 #### 4.10 Annotating type checkers
 
 p. 69: the pseudo-code for `infer(Γ,a+b)` is wrong in that it removes the annotations from the subexpressions of the addition expression.  The correct return statement would be
@@ -171,6 +175,8 @@ p. 92: in the last rule for `ifeq L`, the code pointer should become `P+1` when 
 
 p. 108:  there is a `&lt;` in the class file template which should
 just be `<`.
+
+p. 112:  in code snippet of `CodeGenerator` class, `compile(Program p)` method requires missing method body, or abstract method declaration.
 
 p. 112: "just a dummy `Object`".  Now, Java has class `Void` for that
 purpose.  Change would affect the following code.
