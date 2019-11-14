@@ -5,6 +5,12 @@ To add a new erratum, create an issue or pull request.
 Please use Github Markdown syntax and adhere to the style of this page.
 I will then add the erratum below.
 
+Errata reported by: 
+- Andreas Abel
+- Shahnur Isgandarli
+- Andreas Lööw
+- Nachiappan Valliappan 
+
 ## Known errata
 
 This includes the errata listed on the book website.
