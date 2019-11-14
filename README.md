@@ -40,6 +40,8 @@ initial state instead of just `0`.  Again on p. 44.
 p. 46: The figure should say `m b's` and `n b's` on the arcs going to
 the final states (instead of `m a's` and `n a's`).
 
+p. 53: The parse table is missing the goto actions (essential!).
+
 p. 53: The line with `%start_pExp` should be deleted from the table (or explained).
 It is rather confusing than helpful.
 
