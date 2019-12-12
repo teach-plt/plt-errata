@@ -118,6 +118,10 @@ checkStm env s = case s of
 
 p. 74, lines 1-3: Use `s` instead of `x` as variable name for statement.
 
+p. 75-76: Use `Void` instead of `Object` as the generic type parameter for `arg`. Change affects several code snippets and the text that describes it.
+
+p. 78: It is bad practice to catch `Throwable`, as it includes fatal JVM errors like `OutOfMemoryError` and `StackOverflowError`. To catch all checked exceptions, `catch (Exception e)` should be used.
+
 ### Chapter 5, Interpreters
 
 p. 82: Rule `γ ⊢ x ⇓ v`: The `v` is type-set in the wrong font.
