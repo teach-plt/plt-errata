@@ -10,6 +10,7 @@ Errata reported by:
 - Shahnur Isgandarli
 - Andreas Lööw
 - Nachiappan Valliappan 
+- WASDi
 
 ## Known errata
 
