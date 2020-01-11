@@ -26,6 +26,20 @@ p. 25: last line: `show (interpret e)` should be `show (eval e)`.
 
 p. 27: too many classes in the Java example have the name `EAdd`. Should be `EAdd`, `ESub`, `EMul`, `EDiv`.
 
+p. 34: The two LBNF rules
+```
+SDecl.     Stm    ::= Type Id ";" ;
+SDecls.    Stm    ::= Type Id "," [Id] ";" ;
+```
+can and should be simplified to 
+```
+SDecls.    Stm    ::= Type [Id] ";" ;
+```
+where
+```
+separator nonempty Id "," ;
+```
+
 ### Chapter 3, Lexing and Parsing
 
 p. 41: The Empty construction could be simplified, by making the
