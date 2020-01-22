@@ -220,7 +220,10 @@ p. 132: In other places, the notation "λx.e" is used for anonymous functions, b
 
 p. 134: It is stated that only the application rule differs between call-by-value and call-by-name. This is false. The variable rule, at least as stated in the book on p. 130 needs to change as well. The book’s variable rule gives back the value found in the environment for the variable – but this only works for call-by-value, for call-by-name to-be-evaluated expressions are stored in the environment rather than values.
 
- 
+ The organization of the environment concerning global and local bindings needs more discussion:
+ > p. 134 It is stated that two environments (i.e. separating functions and variables) are _needed_ to handle recursive definitions (side note: and another motivation mentioned, which I think it false as well, because memory will simply be shared(?), is that separating the functions and variables saves memory): Apparently the author forgot that you can have circular data structures in funky languages (aka lazy languages) like Haskell.
+
+The separation of global and local bindings is not necessary, but conceptually cleaner, since global functions can be bound to expression, whereas local bindings need in general be bound to closures.
 
 #### 7.8 Polymorphism
 
