@@ -218,6 +218,10 @@ p. 128: C++ has had lambda functions since C++11.  This is also true for many ot
 
 p. 132: In other places, the notation "λx.e" is used for anonymous functions, but in the call-by-name application rule the notation "λx → e" is used instead.
 
+p. 134: It is stated that only the application rule differs between call-by-value and call-by-name. This is false. The variable rule, at least as stated in the book on p. 130 needs to change as well. The book’s variable rule gives back the value found in the environment for the variable – but this only works for call-by-value, for call-by-name to-be-evaluated expressions are stored in the environment rather than values.
+
+ 
+
 #### 7.8 Polymorphism
 
 p. 139 (and other places, e.g. Sec. 7.9): "->" is typeset incorrectly, e.g. in "since `a = d -> e`" (compare with arrow below).
