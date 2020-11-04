@@ -74,6 +74,20 @@ It is rather confusing than helpful.
 
 ### Chapter 4, Type Checking
 
+p. 64 Exercise 4-0: "`1 + 2 + "hello" + 1 + 2` ... which type of `+`
+applies to each of the four additions.  Recall that `+` is
+left associative!"
+
+A disclaimer should be added here that a programming language would be
+ill-designed that allowed the value of an expression depend on an
+arbitrary choice of association order of a usually associative
+operator like `+`.  (In this case the value, is either `"3hello12"` or
+`"12hello3"` depending on the association order.)  A sane language
+would guarantee the usual law _(x + y) + z = x + (y + z)_ to the
+extend possible.  (Note that for floating points it holds only
+approximately!)
+
+
 #### 4.7 The validity of statements and function definitions
 
 The judgement for checking statements should be formulated as
