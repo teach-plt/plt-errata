@@ -22,6 +22,12 @@ p. 10 (and also later): it is stated that Python is an untyped language. By this
 
 ### Chapter 2, Grammars
 
+p. 17: bnfc backend `-java1.4` no longer exists.
+
+p. 18f: `-java` backend: From bnfc 2.8.1, the CUP parser file is named
+`_cup.cup`.  From 2.8.4, the generated directory is lowercase: `calc`
+instead of `Calc`.
+
 p. 25: last line: `show (interpret e)` should be `show (eval e)`.
 
 p. 27: too many classes in the Java example have the name `EAdd`. Should be `EAdd`, `ESub`, `EMul`, `EDiv`.
