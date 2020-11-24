@@ -5,11 +5,11 @@ To add a new erratum, create an issue or pull request.
 Please use Github Markdown syntax and adhere to the style of this page.
 I will then add the erratum below.
 
-Errata reported by: 
+Errata reported by:
 - Andreas Abel
 - Shahnur Isgandarli
 - Andreas Lööw
-- Nachiappan Valliappan 
+- Nachiappan Valliappan
 - WASDi
 
 ## Known errata
@@ -37,7 +37,7 @@ p. 34: The two LBNF rules
 SDecl.     Stm    ::= Type Id ";" ;
 SDecls.    Stm    ::= Type Id "," [Id] ";" ;
 ```
-can and should be simplified to 
+can and should be simplified to
 ```
 SDecls.    Stm    ::= Type [Id] ";" ;
 ```
