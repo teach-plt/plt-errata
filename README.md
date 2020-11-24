@@ -127,6 +127,8 @@ p. 70: the pseudo-code for `infer(Γ,a+b)` has the same problem as on p. 69
 
 #### 4.11 Type checker in Haskell
 
+p. 72-73: the implementation of `inferBin` lacks a final `return typ`.
+
 p. 73: in `checkExp` code, `if (typ2 = typ)` should be `if typ2 == typ`.
 It could also be written as
 
