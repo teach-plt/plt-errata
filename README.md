@@ -220,8 +220,6 @@ p. 92: in the last rule for `ifeq L`, the code pointer should become `P+1` when 
 
 ### Chapter 6, Code Generation
 
-p. 107:  The `.limits` pragma in a `.j` file are optional.  Jasmin can easily compute these limits itself.  It is better to let Jasmin do this routine job.  (To skip the routine jobs, we use an assembler in the first place.)
-
 p. 108:  there is a `&lt;` in the class file template which should
 just be `<`.
 
