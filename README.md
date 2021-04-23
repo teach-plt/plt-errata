@@ -11,6 +11,7 @@ Errata reported by:
 - Andreas Lööw
 - Nachiappan Valliappan
 - WASDi
+- Alexander Kurz [#11]
 
 ## Known errata
 
@@ -213,6 +214,10 @@ This should return `0`, but the current interpreter will return `1`.
 
 Possible fix: replace premise `γ′ ⊢ s ⇓ γ″` by  `γ′. ⊢ s ⇓ γ″.γ₀` in the
 first rule for `if`.  Analogously for the second rule.
+
+#### 5.4 Programs, function definitions, and function calls
+
+p. 86, rule for function call:  The subscript `n` in argument `a_n` should be `m`. [#11]
 
 #### 5.7 Interpreting Java bytecode
 
