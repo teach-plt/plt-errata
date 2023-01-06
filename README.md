@@ -12,6 +12,7 @@ Errata reported by:
 - Nachiappan Valliappan
 - WASDi
 - Alexander Kurz [#11]
+- csoroz [#12] [#13]
 
 ## Known errata
 
@@ -224,6 +225,10 @@ p. 86, rule for function call:  The subscript `n` in argument `a_n` should be `m
 p. 92: in the last rule for `ifeq L`, the code pointer should become `P+1` when `v != 0`
 
 ### Chapter 6, Code Generation
+
+p. 103: "The last case takes case of ..." → "takes care of"
+
+p. 108 l. 5: _funtypeJVM(...)_ has one extra parenthesis at the end.
 
 p. 108:  there is a `&lt;` in the class file template which should
 just be `<`.
