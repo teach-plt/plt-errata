@@ -13,6 +13,7 @@ Errata reported by:
 - WASDi
 - Alexander Kurz [#11]
 - csoroz [#12] [#13]
+- Tobias Hägglund
 
 ## Known errata
 
@@ -47,6 +48,18 @@ where
 ```
 separator nonempty Id "," ;
 ```
+
+p. 36: The rule for assignment expressions
+```
+EAss.      Exp2   ::= Exp3 "=" Exp2;
+```
+does not match the form `v=e` given in the table on p. 35.
+It should be simplified to:
+
+```
+EAss.      Exp2   ::= Id "=" Exp2;
+```
+
 
 ### Chapter 3, Lexing and Parsing
 
