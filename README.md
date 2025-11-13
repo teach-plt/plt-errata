@@ -49,6 +49,34 @@ where
 separator nonempty Id "," ;
 ```
 
+p. 35: Supposedly `v` stands for the category of _variables_ and `e` for _expressions_,
+so the more precise rules for increment and decrement are:
+```
+EPIncr.    Exp14  ::= Id "++" ;
+EPDecr.    Exp14  ::= Id "--" ;
+
+EIncr.     Exp13  ::= "++" Id ;
+EDecr.     Exp13  ::= "--" Id ;
+```
+
+p. 35: The rules for pre- and postfix operators are systematically wrong.
+They increase the priority on the right hand side.
+As a consequence, expressions that stack such operators, like `- - x`, are not parseable.
+To allow such, the priority needs to stay the same.
+The correct rule for negation is thus:
+```
+ENeg.      Exp13  ::= "-" Exp13 ;
+```
+If pre and post increment and decrement operated on expressions rather than just variables,
+their rules would be:
+```
+EPIncr.    Exp14  ::= Exp14 "++" ;
+EPDecr.    Exp14  ::= Exp14 "--" ;
+
+EIncr.     Exp13  ::= "++" Exp13 ;
+EDecr.     Exp13  ::= "--" Exp13 ;
+```
+
 p. 36: The rule for assignment expressions
 ```
 EAss.      Exp2   ::= Exp3 "=" Exp2;
